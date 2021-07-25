@@ -232,84 +232,6 @@ Column CyberMethod1() {
               lecturer: "Ms Jovita",
               loc: "Auditorium South",
               time: "10:00"),
-        ] else if (dateController.class2.value == 6) ...[
-          //Saturday
-          Subjects1(
-              module: "Programming II",
-              lecturer: "Mr Simon",
-              loc: "Lab 6",
-              time: "07:30"),
-          SizedBox(
-            height: 15,
-          ),
-          Subjects1(
-              module: "Data Networks",
-              lecturer: "Ms Ankome",
-              loc: "Lab 12",
-              time: "08:30"),
-          SizedBox(
-            height: 15,
-          ),
-          Subjects1(
-              module: "Operationg Systems",
-              lecturer: "Ms Jovita",
-              loc: "Auditorium South",
-              time: "10:00"),
-          SizedBox(
-            height: 15,
-          ),
-          Subjects1(
-              module: "Operationg Systems",
-              lecturer: "Ms Jovita",
-              loc: "Auditorium South",
-              time: "10:00"),
-          SizedBox(
-            height: 15,
-          ),
-          Subjects1(
-              module: "Operationg Systems",
-              lecturer: "Ms Jovita",
-              loc: "Auditorium South",
-              time: "10:00"),
-        ] else if (dateController.class2.value == 7) ...[
-          //Sunday
-          Subjects1(
-              module: "Programming II",
-              lecturer: "Mr Simon",
-              loc: "Lab 6",
-              time: "07:30"),
-          SizedBox(
-            height: 15,
-          ),
-          Subjects1(
-              module: "Data Networks",
-              lecturer: "Ms Ankome",
-              loc: "Lab 12",
-              time: "08:30"),
-          SizedBox(
-            height: 15,
-          ),
-          Subjects1(
-              module: "Operationg Systems",
-              lecturer: "Ms Jovita",
-              loc: "Auditorium South",
-              time: "10:00"),
-          SizedBox(
-            height: 15,
-          ),
-          Subjects1(
-              module: "Operationg Systems",
-              lecturer: "Ms Jovita",
-              loc: "Auditorium South",
-              time: "10:00"),
-          SizedBox(
-            height: 15,
-          ),
-          Subjects1(
-              module: "Operationg Systems",
-              lecturer: "Ms Jovita",
-              loc: "Auditorium South",
-              time: "10:00"),
         ],
       ] else if (box.get(3) == 2) ...[
         if (dateController.class2.value == 1) ...[
@@ -523,20 +445,6 @@ Column CyberMethod1() {
               lecturer: "Ms Jovita",
               loc: "Auditorium South",
               time: "10:00"),
-        ] else if (dateController.class2.value == 6) ...[
-          //Saturday
-          Subjects1(
-              module: "Party",
-              lecturer: "Host: you",
-              loc: "At your house",
-              time: "19:00"),
-        ] else if (dateController.class2.value == 7) ...[
-          //Sunday
-          Subjects1(
-              module: "Go to Church :)", lecturer: "", loc: "", time: "07:30"),
-          SizedBox(
-            height: 15,
-          ),
         ],
       ] else if (box.get(3) == 3) ...[
         if (dateController.class2.value == 1) ...[
@@ -750,20 +658,6 @@ Column CyberMethod1() {
               lecturer: "Ms Jovita",
               loc: "Auditorium South",
               time: "10:00"),
-        ] else if (dateController.class2.value == 6) ...[
-          //Saturday
-          Subjects1(
-              module: "Party a",
-              lecturer: "Host: you",
-              loc: "At your house",
-              time: "19:00"),
-        ] else if (dateController.class2.value == 7) ...[
-          //Sunday
-          Subjects1(
-              module: "Go to Church :)", lecturer: "", loc: "", time: "07:30"),
-          SizedBox(
-            height: 15,
-          ),
         ],
       ] else if (box.get(3) == 4) ...[
         if (dateController.class2.value == 1) ...[
@@ -977,20 +871,6 @@ Column CyberMethod1() {
               lecturer: "Ms Jovita",
               loc: "Auditorium South",
               time: "10:00"),
-        ] else if (dateController.class2.value == 6) ...[
-          //Saturday
-          Subjects1(
-              module: "Party a",
-              lecturer: "Host: you",
-              loc: "At your house",
-              time: "19:00"),
-        ] else if (dateController.class2.value == 7) ...[
-          //Sunday
-          Subjects1(
-              module: "Go to Church :)", lecturer: "", loc: "", time: "07:30"),
-          SizedBox(
-            height: 15,
-          ),
         ],
       ] else if (box.get(3) == 5) ...[
         if (dateController.class2.value == 1) ...[
@@ -1204,20 +1084,6 @@ Column CyberMethod1() {
               lecturer: "Ms Jovita",
               loc: "Auditorium South",
               time: "10:00"),
-        ] else if (dateController.class2.value == 6) ...[
-          //Saturday
-          Subjects1(
-              module: "Party a",
-              lecturer: "Host: you",
-              loc: "At your house",
-              time: "19:00"),
-        ] else if (dateController.class2.value == 7) ...[
-          //Sunday
-          Subjects1(
-              module: "Go to Church :)", lecturer: "", loc: "", time: "07:30"),
-          SizedBox(
-            height: 15,
-          ),
         ],
       ] else if (box.get(3) == 6) ...[
         if (dateController.class2.value == 1) ...[
@@ -1431,20 +1297,6 @@ Column CyberMethod1() {
               lecturer: "Ms Jovita",
               loc: "Auditorium South",
               time: "10:00"),
-        ] else if (dateController.class2.value == 6) ...[
-          //Saturday
-          Subjects1(
-              module: "Party a",
-              lecturer: "Host: you",
-              loc: "At your house",
-              time: "19:00"),
-        ] else if (dateController.class2.value == 7) ...[
-          //Sunday
-          Subjects1(
-              module: "Go to Church :)", lecturer: "", loc: "", time: "07:30"),
-          SizedBox(
-            height: 15,
-          ),
         ],
       ]
     ],
@@ -1454,7 +1306,7 @@ Column CyberMethod1() {
 Column CyberMethod2() {
   return Column(
     children: [
-      // Computer Science Year 2
+      //Computer Science Year 1
       if (box.get(3) == 1) ...[
         if (dateController.class2.value == 1) ...[
           // Monday
@@ -1667,84 +1519,6 @@ Column CyberMethod2() {
               lecturer: "Ms Jovita",
               loc: "Auditorium South",
               time: "10:00"),
-        ] else if (dateController.class2.value == 6) ...[
-          //Saturday
-          Subjects1(
-              module: "Programming II",
-              lecturer: "Mr Simon",
-              loc: "Lab 6",
-              time: "07:30"),
-          SizedBox(
-            height: 15,
-          ),
-          Subjects1(
-              module: "Data Networks",
-              lecturer: "Ms Ankome",
-              loc: "Lab 12",
-              time: "08:30"),
-          SizedBox(
-            height: 15,
-          ),
-          Subjects1(
-              module: "Operationg Systems",
-              lecturer: "Ms Jovita",
-              loc: "Auditorium South",
-              time: "10:00"),
-          SizedBox(
-            height: 15,
-          ),
-          Subjects1(
-              module: "Operationg Systems",
-              lecturer: "Ms Jovita",
-              loc: "Auditorium South",
-              time: "10:00"),
-          SizedBox(
-            height: 15,
-          ),
-          Subjects1(
-              module: "Operationg Systems",
-              lecturer: "Ms Jovita",
-              loc: "Auditorium South",
-              time: "10:00"),
-        ] else if (dateController.class2.value == 7) ...[
-          //Sunday
-          Subjects1(
-              module: "Programming II",
-              lecturer: "Mr Simon",
-              loc: "Lab 6",
-              time: "07:30"),
-          SizedBox(
-            height: 15,
-          ),
-          Subjects1(
-              module: "Data Networks",
-              lecturer: "Ms Ankome",
-              loc: "Lab 12",
-              time: "08:30"),
-          SizedBox(
-            height: 15,
-          ),
-          Subjects1(
-              module: "Operationg Systems",
-              lecturer: "Ms Jovita",
-              loc: "Auditorium South",
-              time: "10:00"),
-          SizedBox(
-            height: 15,
-          ),
-          Subjects1(
-              module: "Operationg Systems",
-              lecturer: "Ms Jovita",
-              loc: "Auditorium South",
-              time: "10:00"),
-          SizedBox(
-            height: 15,
-          ),
-          Subjects1(
-              module: "Operationg Systems",
-              lecturer: "Ms Jovita",
-              loc: "Auditorium South",
-              time: "10:00"),
         ],
       ] else if (box.get(3) == 2) ...[
         if (dateController.class2.value == 1) ...[
@@ -1958,20 +1732,6 @@ Column CyberMethod2() {
               lecturer: "Ms Jovita",
               loc: "Auditorium South",
               time: "10:00"),
-        ] else if (dateController.class2.value == 6) ...[
-          //Saturday
-          Subjects1(
-              module: "Party",
-              lecturer: "Host: you",
-              loc: "At your house",
-              time: "19:00"),
-        ] else if (dateController.class2.value == 7) ...[
-          //Sunday
-          Subjects1(
-              module: "Go to Church :)", lecturer: "", loc: "", time: "07:30"),
-          SizedBox(
-            height: 15,
-          ),
         ],
       ] else if (box.get(3) == 3) ...[
         if (dateController.class2.value == 1) ...[
@@ -2185,20 +1945,6 @@ Column CyberMethod2() {
               lecturer: "Ms Jovita",
               loc: "Auditorium South",
               time: "10:00"),
-        ] else if (dateController.class2.value == 6) ...[
-          //Saturday
-          Subjects1(
-              module: "Party a",
-              lecturer: "Host: you",
-              loc: "At your house",
-              time: "19:00"),
-        ] else if (dateController.class2.value == 7) ...[
-          //Sunday
-          Subjects1(
-              module: "Go to Church :)", lecturer: "", loc: "", time: "07:30"),
-          SizedBox(
-            height: 15,
-          ),
         ],
       ] else if (box.get(3) == 4) ...[
         if (dateController.class2.value == 1) ...[
@@ -2412,20 +2158,6 @@ Column CyberMethod2() {
               lecturer: "Ms Jovita",
               loc: "Auditorium South",
               time: "10:00"),
-        ] else if (dateController.class2.value == 6) ...[
-          //Saturday
-          Subjects1(
-              module: "Party a",
-              lecturer: "Host: you",
-              loc: "At your house",
-              time: "19:00"),
-        ] else if (dateController.class2.value == 7) ...[
-          //Sunday
-          Subjects1(
-              module: "Go to Church :)", lecturer: "", loc: "", time: "07:30"),
-          SizedBox(
-            height: 15,
-          ),
         ],
       ] else if (box.get(3) == 5) ...[
         if (dateController.class2.value == 1) ...[
@@ -2639,20 +2371,6 @@ Column CyberMethod2() {
               lecturer: "Ms Jovita",
               loc: "Auditorium South",
               time: "10:00"),
-        ] else if (dateController.class2.value == 6) ...[
-          //Saturday
-          Subjects1(
-              module: "Party a",
-              lecturer: "Host: you",
-              loc: "At your house",
-              time: "19:00"),
-        ] else if (dateController.class2.value == 7) ...[
-          //Sunday
-          Subjects1(
-              module: "Go to Church :)", lecturer: "", loc: "", time: "07:30"),
-          SizedBox(
-            height: 15,
-          ),
         ],
       ] else if (box.get(3) == 6) ...[
         if (dateController.class2.value == 1) ...[
@@ -2866,20 +2584,6 @@ Column CyberMethod2() {
               lecturer: "Ms Jovita",
               loc: "Auditorium South",
               time: "10:00"),
-        ] else if (dateController.class2.value == 6) ...[
-          //Saturday
-          Subjects1(
-              module: "Party a",
-              lecturer: "Host: you",
-              loc: "At your house",
-              time: "19:00"),
-        ] else if (dateController.class2.value == 7) ...[
-          //Sunday
-          Subjects1(
-              module: "Go to Church :)", lecturer: "", loc: "", time: "07:30"),
-          SizedBox(
-            height: 15,
-          ),
         ],
       ]
     ],
@@ -2889,7 +2593,7 @@ Column CyberMethod2() {
 Column CyberMethod3() {
   return Column(
     children: [
-      // Computer Science Year 3
+      //Computer Science Year 1
       if (box.get(3) == 1) ...[
         if (dateController.class2.value == 1) ...[
           // Monday

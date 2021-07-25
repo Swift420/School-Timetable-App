@@ -5,11 +5,9 @@ import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:school/controllers/dateController.dart';
-import 'package:school/pages/afterLogin_details_page.dart';
-import 'package:school/screens/home.dart';
+
 import 'package:school/screens/homepage.dart';
 import 'package:school/screens/login.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import 'controllers/otherController.dart';
 

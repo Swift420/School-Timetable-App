@@ -6,7 +6,6 @@ import 'package:school/screens/LecturerScreen.dart';
 import 'package:school/screens/home.dart';
 import 'package:school/screens/TimeTable.dart';
 import 'package:school/screens/Settings.dart';
-import 'dart:async';
 
 class HomePageScreen extends StatefulWidget {
   @override
