@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "669825370775",
+    "project_id": "school-management-system-fe956",
+    "storage_bucket": "school-management-system-fe956.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:669825370775:android:2e5f97fd52d4826f4cf7d2",
+        "android_client_info": {
+          "package_name": "com.swiftxyz.school"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "669825370775-7lqh54a1jlcapd4ocnkf9bbfotov9v6r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvwfrzCZ_HJjx7_Yznbjr_1k9lFmJREEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "669825370775-7lqh54a1jlcapd4ocnkf9bbfotov9v6r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,11 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:school/controllers/dateController.dart';
 import 'package:school/controllers/otherController.dart';
-import 'package:school/main.dart';
-import 'package:file/local.dart';
+
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:school/methods/subjectMethod.dart';
 
 var box = Hive.box("studentBox1");
