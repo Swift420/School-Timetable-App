@@ -18,6 +18,31 @@ class _detailsPageState extends State<detailsPage> {
   int courseSelected = 1;
   int yearSelected = 2;
   int groupSelected = 1;
+  int SpecSelected = 0;
+
+  Widget customSpecRadio(String text, int index) {
+    return ElevatedButton(
+      onPressed: () {
+        setState(() {
+          SpecSelected = index;
+        });
+      },
+      child: Text(
+        text,
+        style: TextStyle(
+          color: (SpecSelected == index) ? Colors.green : Colors.blueGrey,
+        ),
+      ),
+      style: ElevatedButton.styleFrom(
+        onPrimary: Colors.white,
+        primary: Colors.white,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        side: BorderSide(
+          color: (SpecSelected == index) ? Colors.green : Colors.blueGrey,
+        ),
+      ),
+    );
+  }
 
   Widget customCourseRadio(String text, int index) {
     return ElevatedButton(
@@ -160,12 +185,32 @@ class _detailsPageState extends State<detailsPage> {
                   ],
                 ),
                 image: buildImage("assets/images/Digitalnomad-amico.png")),
+            PageViewModel(
+                titleWidget: _title("What are you Specializing in?"),
+                bodyWidget: Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        customSpecRadio("Software Development", 1),
+                        SizedBox(width: 20),
+                        customSpecRadio("Network Administration", 2),
+                        SizedBox(width: 20),
+                        customSpecRadio("Communications Network", 3),
+                      ],
+                    ),
+                  ),
+                ),
+                image: buildImage("assets/images/Typing-bro.png")),
           ],
           done: Text('Done'),
           onDone: () {
             box.put(3, groupSelected);
             box.put(4, yearSelected);
             box.put(5, courseSelected);
+            box.put(6, SpecSelected);
             Get.off(() => HomePageScreen());
           },
           doneColor: Colors.orangeAccent,

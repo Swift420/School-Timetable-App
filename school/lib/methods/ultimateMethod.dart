@@ -21,11 +21,11 @@ Column UltimateColumn() {
   return Column(
     children: [
       if (box.get(4) == 1 && box.get(5) == 1) ...[
-        ChangingClassMethod1(),
+        CompScienceClassY1(),
       ] else if (box.get(4) == 2 && box.get(5) == 1) ...[
-        ChangingClassMethod2(),
+        CompScienceClassY2(),
       ] else if (box.get(4) == 3 && box.get(5) == 1) ...[
-        ChangingClassMethod3(),
+        ChangingClassMethod1(),
       ]
     ],
   );

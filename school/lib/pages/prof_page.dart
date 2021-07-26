@@ -19,7 +19,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
 
   int courseSelected = Hive.box("studentBox1").get(5);
 
-  int SpecSelected = 0;
+  int SpecSelected = Hive.box("studentBox1").get(6);
 
   Widget customSpecRadio(String text, int index) {
     return ElevatedButton(
@@ -31,7 +31,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
       child: Text(
         text,
         style: TextStyle(
-          color: (SpecSelected == index) ? Colors.redAccent : Colors.blueGrey,
+          color: (SpecSelected == index) ? Colors.green : Colors.blueGrey,
         ),
       ),
       style: ElevatedButton.styleFrom(
@@ -39,7 +39,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
         primary: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         side: BorderSide(
-          color: (SpecSelected == index) ? Colors.redAccent : Colors.blueGrey,
+          color: (SpecSelected == index) ? Colors.green : Colors.blueGrey,
         ),
       ),
     );
@@ -334,35 +334,35 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                     ),
                   ),
                 ),
-                // SizedBox(height: 30),
-                // Center(
-                //   child: Text(
-                //     "Specialization",
-                //     style: TextStyle(
-                //       fontSize: 17,
-                //     ),
-                //   ),
-                // ),
-                // Center(
-                //   child: SingleChildScrollView(
-                //     scrollDirection: Axis.horizontal,
-                //     child: Padding(
-                //       padding:
-                //           const EdgeInsets.only(left: 10, right: 20, top: 10),
-                //       child: Row(
-                //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                //         crossAxisAlignment: CrossAxisAlignment.center,
-                //         children: [
-                //           customSpecRadio("Software Development", 1),
-                //           SizedBox(width: 20),
-                //           customSpecRadio("Network Administration", 2),
-                //           SizedBox(width: 20),
-                //           customSpecRadio("Communications Network", 3),
-                //         ],
-                //       ),
-                //     ),
-                //   ),
-                // ),
+                SizedBox(height: 30),
+                Center(
+                  child: Text(
+                    "Specialization",
+                    style: TextStyle(
+                      fontSize: 17,
+                    ),
+                  ),
+                ),
+                Center(
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Padding(
+                      padding:
+                          const EdgeInsets.only(left: 10, right: 20, top: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          customSpecRadio("Software Development", 1),
+                          SizedBox(width: 20),
+                          customSpecRadio("Network Administration", 2),
+                          SizedBox(width: 20),
+                          customSpecRadio("Communications Network", 3),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
                 SizedBox(
                   height: 20,
                 ),
@@ -409,7 +409,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                         box.put(4, yearSelected);
                         box.put(5, courseSelected);
                         box.put(6, SpecSelected);
-                        SpecSelected = Hive.box("studentBox1").get(6);
+
                         //print(box.get(6));
                         //print(SpecSelected);
                         Navigator.pop(context);

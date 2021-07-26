@@ -6,8 +6,8 @@ import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:school/controllers/dateController.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:school/pages/groceries.dart';
+import 'package:school/pages/afterLogin_details_page.dart';
+
 import 'package:school/screens/homepage.dart';
 import 'package:school/screens/login.dart';
 
