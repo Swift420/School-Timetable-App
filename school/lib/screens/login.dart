@@ -19,9 +19,11 @@ class _LoginPageState extends State<LoginPage> {
 
   var _formKey = GlobalKey<FormState>();
   var _formKey2 = GlobalKey<FormState>();
+  // bool selected = true;
 
   @override
   Widget build(BuildContext context) {
+    //Hive.box("studentBox1").put(10, selected);
     var size = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(

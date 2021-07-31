@@ -21,6 +21,8 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
 
   int SpecSelected = Hive.box("studentBox1").get(6);
 
+  int notifSelected = Hive.box("studentBox1").get(15);
+
   Widget customSpecRadio(String text, int index) {
     return ElevatedButton(
       onPressed: () {
@@ -40,6 +42,30 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         side: BorderSide(
           color: (SpecSelected == index) ? Colors.green : Colors.blueGrey,
+        ),
+      ),
+    );
+  }
+
+  Widget customNotif(String text, int index) {
+    return ElevatedButton(
+      onPressed: () {
+        setState(() {
+          notifSelected = index;
+        });
+      },
+      child: Text(
+        text,
+        style: TextStyle(
+          color: (notifSelected == index) ? Colors.green : Colors.blueGrey,
+        ),
+      ),
+      style: ElevatedButton.styleFrom(
+        onPrimary: Colors.white,
+        primary: Colors.white,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        side: BorderSide(
+          color: (notifSelected == index) ? Colors.green : Colors.blueGrey,
         ),
       ),
     );
@@ -358,6 +384,34 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                           customSpecRadio("Network Administration", 2),
                           SizedBox(width: 20),
                           customSpecRadio("Communications Network", 3),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 30),
+                Center(
+                  child: Text(
+                    "Notifications",
+                    style: TextStyle(
+                      fontSize: 17,
+                    ),
+                  ),
+                ),
+                Center(
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Padding(
+                      padding:
+                          const EdgeInsets.only(left: 10, right: 20, top: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          customNotif("On", 1),
+                          SizedBox(width: 20),
+                          customNotif("Off", 2),
+                          SizedBox(width: 20),
                         ],
                       ),
                     ),

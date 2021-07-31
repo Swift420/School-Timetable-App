@@ -1,16 +1,5 @@
 List dataItems = [
   {
-    "id": 1,
-    "code": "Prof. Guy-Alain Lusilao Zodi",
-    "name": "+264 61 207 2774",
-    "img":
-        "http://fci.nust.na/sites/default/files/pictures/xpicture-66-1453724388.jpg.pagespeed.ic.cIjnj5k5_P.webp",
-    "price": "FCI Building 017",
-    "promotionPrice": 11.50,
-    "email": "gzodi@nust.na",
-    "Occup": "HOD, Associate Professor ",
-  },
-  {
     "id": 2,
     "code": "Mr Gereon Kapuire",
     "name": "+264 61 207 2334",
@@ -131,5 +120,38 @@ List dataItems = [
     "promotionPrice": 11.50,
     "email": "",
     "Occup": "Junior Lecturer",
+  },
+  {
+    "id": 13,
+    "code": "Mr Julius Silaa",
+    "name": "+264 61 207 2037",
+    "img":
+        "http://fci.nust.na/sites/default/files/pictures/xpicture-148-1532084538.jpg.pagespeed.ic.Lm5TpoOTxJ.webp",
+    "price": "Poly Heights 401",
+    "promotionPrice": 13.00,
+    "email": " ",
+    "Occup": "Lecturer",
+  },
+  {
+    "id": 14,
+    "code": "Mr Julius Silaa",
+    "name": "+264 61 207 2037",
+    "img":
+        "http://fci.nust.na/sites/default/files/pictures/xpicture-148-1532084538.jpg.pagespeed.ic.Lm5TpoOTxJ.webp",
+    "price": "Poly Heights 401",
+    "promotionPrice": 13.00,
+    "email": " ",
+    "Occup": "Lecturer",
+  },
+  {
+    "id": 15,
+    "code": "Prof. Guy-Alain Lusilao Zodi",
+    "name": "+264 61 207 2774",
+    "img":
+        "http://fci.nust.na/sites/default/files/pictures/xpicture-66-1453724388.jpg.pagespeed.ic.cIjnj5k5_P.webp",
+    "price": "FCI Building 017",
+    "promotionPrice": 11.50,
+    "email": "gzodi@nust.na",
+    "Occup": "HOD, Associate Professor ",
   },
 ];

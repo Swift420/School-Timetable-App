@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hive/hive.dart';
 import 'package:school/controllers/dateController.dart';
 import 'package:school/controllers/otherController.dart';
 import 'package:school/screens/LecturerScreen.dart';
@@ -51,6 +52,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
           });
           dateController.changeDate();
           otherDateController.changeOtherDate();
+          //print(Hive.box("studentBox1").get(10));
+
+          print(Hive.box("studentBox1").get(20));
         },
       ),
       body: tabs[_currentIndex],

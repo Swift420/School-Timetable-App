@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hive/hive.dart';
 import 'package:get/get.dart';
 import 'package:school/pages/help_center_page.dart';
+import 'package:school/pages/notes.dart';
 import 'package:school/pages/prof_page.dart';
 
 import 'package:url_launcher/url_launcher.dart';
@@ -150,7 +151,9 @@ class _OtherScreenState extends State<OtherScreen> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 10),
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(TestSchedule());
+                          },
                           child: Row(children: [
                             Icon(
                               Icons.settings_outlined,

@@ -23,9 +23,9 @@ Column UltimateColumn() {
       if (box.get(4) == 1 && box.get(5) == 1) ...[
         CompScienceClassY1(),
       ] else if (box.get(4) == 2 && box.get(5) == 1) ...[
-        CompScienceClassY2(),
+        CompScienceClassY1(),
       ] else if (box.get(4) == 3 && box.get(5) == 1) ...[
-        ChangingClassMethod1(),
+        CompScienceClassY1(),
       ]
     ],
   );

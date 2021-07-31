@@ -19,6 +19,7 @@ class _detailsPageState extends State<detailsPage> {
   int yearSelected = 2;
   int groupSelected = 1;
   int SpecSelected = 0;
+  int notifSelected = 1;
 
   Widget customSpecRadio(String text, int index) {
     return ElevatedButton(
@@ -211,6 +212,7 @@ class _detailsPageState extends State<detailsPage> {
             box.put(4, yearSelected);
             box.put(5, courseSelected);
             box.put(6, SpecSelected);
+            box.put(15, notifSelected);
             Get.off(() => HomePageScreen());
           },
           doneColor: Colors.orangeAccent,

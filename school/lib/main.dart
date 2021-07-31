@@ -32,7 +32,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      themeMode: ThemeMode.dark,
+      // themeMode: ThemeMode.system,
+      // darkTheme: ThemeData(
+      //     brightness: Brightness.dark, accentColor: Colors.amber[700]),
       debugShowCheckedModeBanner: false,
       home: Hive.box("studentBox1").isNotEmpty ? HomePageScreen() : LoginPage(),
     );
