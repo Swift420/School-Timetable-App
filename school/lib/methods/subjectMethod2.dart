@@ -35,6 +35,8 @@ Column CompScienceClassY1() {
           FbCollection(1, "Thurs", "Y1"),
         ] else if (dateController.class2.value == 5) ...[
           FbCollection(1, "Fri", "Y1"),
+        ] else if (dateController.class2.value == 7) ...[
+          FbCollection(1, "Thurs", "Y1"),
         ]
       ]
     ],

@@ -27,8 +27,13 @@ class Subjects1 extends StatefulWidget {
 }
 
 class _Subjects1State extends State<Subjects1> {
+  bool selected = true;
+
   @override
   void initState() {
+    // selected = PageStorage.of(context)
+    //         ?.readState(context, identifier: ValueKey("selected_value")) ??
+    //     true;
     initializeSetting();
     super.initState();
     tz.initializeTimeZones();
@@ -48,8 +53,6 @@ class _Subjects1State extends State<Subjects1> {
         0, "Notif Title", "This is the body", generalNotificationDetails);
   }
 
-  bool selected = true;
-
   @override
   Widget build(BuildContext context) {
     var why = DateTime.parse(
@@ -59,8 +62,11 @@ class _Subjects1State extends State<Subjects1> {
       padding: EdgeInsets.all(10),
       height: 100,
       decoration: BoxDecoration(
-        color: Color(0xFFF9F9FB),
-        borderRadius: BorderRadius.circular(30),
+        color: //Color(0xFF3d3d3d),
+            Color(0xFF212121),
+        //Color(0xFFF9F9FB),
+        //color: Color(0xff29404E),
+        borderRadius: BorderRadius.circular(15),
       ),
       child: Row(
         children: [
@@ -74,7 +80,10 @@ class _Subjects1State extends State<Subjects1> {
               Center(
                 child: Text(
                   "${widget.time}",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
               )
             ],
@@ -85,7 +94,7 @@ class _Subjects1State extends State<Subjects1> {
           Container(
             height: 100,
             width: 1,
-            color: Colors.grey.withOpacity(0.5),
+            color: Colors.white.withOpacity(0.5),
           ),
           SizedBox(
             width: 10,
@@ -95,12 +104,17 @@ class _Subjects1State extends State<Subjects1> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("${widget.module}"),
+                Text(
+                  "${widget.module}",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
                 Row(
                   children: [
                     Icon(
                       Icons.location_on,
-                      color: Colors.grey,
+                      color: Colors.white70,
                       size: 20,
                     ),
                     SizedBox(
@@ -109,7 +123,8 @@ class _Subjects1State extends State<Subjects1> {
                     Text(
                       "${widget.loc}",
                       style: TextStyle(
-                        color: Colors.grey,
+                        color: Colors.white,
+                        //color: Colors.grey,
                         fontSize: 13,
                       ),
                     ),
@@ -119,7 +134,8 @@ class _Subjects1State extends State<Subjects1> {
                   children: [
                     Icon(
                       Icons.person,
-                      color: Colors.grey,
+                      color: Colors.white70,
+                      //color: Colors.grey,
                     ),
                     SizedBox(
                       width: 1,
@@ -127,7 +143,7 @@ class _Subjects1State extends State<Subjects1> {
                     Text(
                       "${widget.lecturer}",
                       style: TextStyle(
-                        color: Colors.grey,
+                        color: Colors.white,
                         fontSize: 13,
                       ),
                     ),
@@ -137,9 +153,12 @@ class _Subjects1State extends State<Subjects1> {
             ),
           ),
           IconButton(
-            icon: Icon(selected
-                ? Icons.notifications_none
-                : Icons.notifications_active),
+            icon: Icon(
+              selected
+                  ? Icons.notifications_none
+                  : Icons.notifications_active_outlined,
+              color: Colors.white,
+            ),
             onPressed: () async {
               // print(why);
               print(widget.time);
@@ -149,11 +168,49 @@ class _Subjects1State extends State<Subjects1> {
               setState(() {
                 selected = !selected;
               });
-
+              // PageStorage.of(context)?.writeState(
+              //   context,
+              //   selected,
+              //   identifier: ValueKey("selected_value"),
+              // );
               if (selected == false) {
                 displayNotification("${widget.module}", why, widget.id);
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Padding(
+                    padding: const EdgeInsets.only(left: 70.0),
+                    child: Text(
+                      "Notification set for ${widget.module}",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                  behavior: SnackBarBehavior.floating,
+                  margin: EdgeInsets.only(bottom: 15.0, left: 20, right: 20),
+                  //padding: EdgeInsets.all(20.0),
+                  backgroundColor: Colors.grey[100],
+                  duration: const Duration(seconds: 2),
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                ));
               } else if (selected == true) {
                 localNotification.cancel(widget.id);
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Padding(
+                    padding: const EdgeInsets.only(left: 40),
+                    child: Text(
+                      "Notification Cancelled for ${widget.module}",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                  behavior: SnackBarBehavior.floating,
+                  margin: EdgeInsets.only(bottom: 15.0, left: 20, right: 20),
+                  //padding: EdgeInsets.all(20.0),
+                  backgroundColor: Colors.grey[100],
+                  duration: const Duration(seconds: 2),
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                ));
               }
             },
           ),

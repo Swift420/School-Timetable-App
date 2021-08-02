@@ -17,7 +17,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Color(0xFF121212),
       body: SafeArea(
         child: ListView(
           children: [
@@ -32,10 +32,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     padding: const EdgeInsets.only(left: 115.0),
                     child: Text(
                       "FCI Society",
-                      style: GoogleFonts.rubik(
+                      style: GoogleFonts.roboto(
                         fontSize: 20,
                         color: Colors.white,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
@@ -69,6 +69,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                   child: Container(
                     child: Card(
+                      color: Color(0xFF3d3d3d),
                       elevation: 2,
                       child: Column(
                         children: [
@@ -87,8 +88,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           SizedBox(height: 10),
                           Text(
                             dataItems[index]['code'],
-                            style: GoogleFonts.rubik(
-                              fontWeight: FontWeight.w400,
+                            style: GoogleFonts.roboto(
+                              //fontWeight: FontWeight.w700,
+                              color: Colors.white,
                             ),
                           ),
                           SizedBox(height: 10),

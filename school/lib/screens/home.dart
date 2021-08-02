@@ -15,7 +15,8 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen>
+    with AutomaticKeepAliveClientMixin {
   final DateController dateController = Get.find();
   final OtherDateController otherDateController = Get.find();
 
@@ -30,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       body: MainWidget(context),
     );
@@ -40,13 +42,16 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         Container(
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Colors.purple,
-                Colors.blue,
-              ],
-            ),
-          ),
+              image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage("assets/images/wallpaper2.jpg"))
+              // gradient: LinearGradient(
+              //   colors: [
+              //     Colors.purple,
+              //     Colors.blue,
+              //   ],
+              // ),
+              ),
           padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
           child: Column(
             children: [
@@ -103,7 +108,8 @@ class _HomeScreenState extends State<HomeScreen> {
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Color(0xFF121212),
+              //color: Color(0xff102733),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Column(
@@ -115,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       "TODAY CLASSES",
                       style: GoogleFonts.notoSans(
                         fontSize: 12,
-                        color: Colors.black,
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -143,4 +149,8 @@ class _HomeScreenState extends State<HomeScreen> {
       ],
     );
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }

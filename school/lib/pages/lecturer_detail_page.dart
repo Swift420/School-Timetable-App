@@ -54,7 +54,7 @@ class _LecturerDetailState extends State<LecturerDetail> {
     String ad = '';
     String _email = "mailto:${widget.email}?subject=${ad}&body=${ad}";
     return Scaffold(
-      backgroundColor: Colors.white70,
+      backgroundColor: Color(0xFF121212), //Colors.white70,
       body: SafeArea(
         child: ListView(
           children: [
@@ -116,7 +116,7 @@ class _LecturerDetailState extends State<LecturerDetail> {
                     fontSize: 25,
                     letterSpacing: 0.8,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white70,
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -138,14 +138,14 @@ class _LecturerDetailState extends State<LecturerDetail> {
                     Expanded(
                       child: Text(widget.type,
                           style: GoogleFonts.roboto(
-                            color: Colors.black,
+                            color: Colors.white,
                             letterSpacing: 0.5,
                           )),
                     ),
                   ],
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.white54,
+                  primary: Color(0xFF212121), //Colors.white54,
                   padding: EdgeInsets.all(20),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15)),
@@ -169,14 +169,14 @@ class _LecturerDetailState extends State<LecturerDetail> {
                     Expanded(
                       child: Text(widget.phone,
                           style: GoogleFonts.roboto(
-                            color: Colors.black,
+                            color: Colors.white,
                             letterSpacing: 0.5,
                           )),
                     ),
                   ],
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.white54,
+                  primary: Color(0xFF212121), //Colors.white54,
                   padding: EdgeInsets.all(20),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15)),
@@ -204,14 +204,14 @@ class _LecturerDetailState extends State<LecturerDetail> {
                     Expanded(
                       child: Text(widget.name,
                           style: GoogleFonts.roboto(
-                            color: Colors.black,
+                            color: Colors.white,
                             letterSpacing: 0.5,
                           )),
                     ),
                   ],
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.white54,
+                  primary: Color(0xFF212121), //Colors.white54,
                   padding: EdgeInsets.all(20),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15)),
@@ -237,14 +237,14 @@ class _LecturerDetailState extends State<LecturerDetail> {
                     Expanded(
                       child: Text(widget.email,
                           style: GoogleFonts.roboto(
-                            color: Colors.black,
+                            color: Colors.white,
                             letterSpacing: 0.5,
                           )),
                     ),
                   ],
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.white54,
+                  primary: Color(0xFF212121), //Colors.white54,
                   padding: EdgeInsets.all(20),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15)),

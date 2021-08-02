@@ -1,11 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:school/controllers/dateController.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:school/models/note.dart';
 import 'package:school/pages/afterLogin_details_page.dart';
 
 import 'package:school/screens/homepage.dart';
@@ -21,6 +23,19 @@ Future<void> main() async {
   Hive.init(document.path);
   await Hive.openBox("studentBox1");
   await Firebase.initializeApp();
+  final appDocumentDir = await getApplicationDocumentsDirectory();
+  Hive.init(appDocumentDir.path);
+  Hive.registerAdapter(
+    NoteAdapter(),
+  );
+
+  await Hive.openBox('darkModeBox');
+
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Colors.black45,
+    statusBarBrightness: Brightness.light,
+  ));
+
   runApp(MyApp());
 }
 

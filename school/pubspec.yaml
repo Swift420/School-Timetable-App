@@ -41,6 +41,9 @@ dependencies:
   flutter_local_notifications: ^7.0.0
   timezone: ^0.7.0
   sqflite: ^2.0.0+3
+  animations: ^2.0.1
+  #cupertino_icons: ^1.0.2
+  desktop_window: ^0.4.0
   
   date_time_picker: ^2.1.0
   intl: ^0.17.0

@@ -65,11 +65,13 @@ class _TestScheduleState extends State<TestSchedule> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF121212),
       appBar: AppBar(),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.orange,
         onPressed: () async {
           Get.to(page());
-          safe = Hive.box("studentBox1").get(20) + 1;
+          safe = safe = Hive.box("studentBox1").get(20) + 1;
           Hive.box("studentBox1").put(20, safe);
           print(safe);
         },
@@ -104,14 +106,23 @@ class _TestScheduleState extends State<TestSchedule> {
                           },
                           child: Center(
                             child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.only(
+                                top: 10.0,
+                                left: 15,
+                                right: 15,
+                              ),
                               child: Stack(children: [
-                                Container(
-                                  height: 150,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15),
-                                    color:
-                                        colors[random.nextInt(colors.length)],
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Container(
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15),
+                                      //color: Color(0xff29404E),
+                                      color: Color(0xFF3d3d3d),
+                                      //color: Color(0xFF212121),
+                                      //colors[random.nextInt(colors.length)],
+                                    ),
                                   ),
                                 ),
                                 Padding(
@@ -124,9 +135,9 @@ class _TestScheduleState extends State<TestSchedule> {
                                         child: Column(
                                           children: [
                                             Text(grocery.name,
-                                                style: GoogleFonts.montserrat(
-                                                  fontSize: 23,
-                                                  color: Colors.black,
+                                                style: GoogleFonts.roboto(
+                                                  fontSize: 19,
+                                                  color: Colors.white,
                                                 )),
                                             SizedBox(height: 15),
                                           ],
@@ -146,7 +157,9 @@ class _TestScheduleState extends State<TestSchedule> {
                                         child: Column(
                                           children: [
                                             Text(
-                                              grocery.body,
+                                              grocery.date
+                                                  .toString()
+                                                  .substring(0, 19),
                                               style: GoogleFonts.montserrat(
                                                 fontSize: 15,
                                                 color: Colors.black,
@@ -162,19 +175,21 @@ class _TestScheduleState extends State<TestSchedule> {
                                   ),
                                 ),
                                 Positioned(
-                                  top: 120,
-                                  left: 230,
+                                  top: 35,
+                                  left: 320,
                                   child: Row(
                                     children: [
                                       Column(
                                         children: [
-                                          Text(
-                                              grocery.date
-                                                  .toString()
-                                                  .substring(0, 19),
-                                              style: TextStyle(
-                                                color: Colors.black,
-                                              )),
+                                          InkWell(
+                                            onLongPress: () {},
+                                            child: IconButton(
+                                                onPressed: () {},
+                                                icon: Icon(
+                                                  Icons.notifications_none,
+                                                  color: Colors.white,
+                                                )),
+                                          ),
                                         ],
                                       ),
                                     ],
@@ -182,31 +197,6 @@ class _TestScheduleState extends State<TestSchedule> {
                                 ),
                               ]),
                             ),
-
-                            // child: Card(
-                            //   color: selectedId == grocery.id
-                            //       ? Colors.white70
-                            //       : Colors.white,
-                            //   child: ListTile(
-                            //     title: Text(grocery.name),
-                            //     onTap: () {
-                            //       setState(() {
-                            //         if (selectedId == null) {
-                            //           textController.text = grocery.name;
-                            //           selectedId = grocery.id;
-                            //         } else {
-                            //           textController.text = '';
-                            //           selectedId = null;
-                            //         }
-                            //       });
-                            //     },
-                            //     onLongPress: () {
-                            //       setState(() {
-                            //         DatabaseHelper.instance.remove(grocery.id!);
-                            //       });
-                            //     },
-                            //   ),
-                            // ),
                           ),
                         );
                       }).toList(),
@@ -275,7 +265,12 @@ class _pageState extends State<page> {
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 15.0, left: 12),
-                child: Icon(Icons.arrow_back_ios),
+                child: InkWell(
+                  child: Icon(Icons.arrow_back_ios),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                ),
               ),
               SizedBox(
                 height: 20,
