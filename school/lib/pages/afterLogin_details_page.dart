@@ -213,6 +213,7 @@ class _detailsPageState extends State<detailsPage> {
             box.put(5, courseSelected);
             box.put(6, SpecSelected);
             box.put(15, notifSelected);
+            Hive.box("studentBox1").put(20, 0);
             Get.off(() => HomePageScreen());
           },
           doneColor: Colors.orangeAccent,

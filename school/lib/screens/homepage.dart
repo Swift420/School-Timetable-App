@@ -7,6 +7,7 @@ import 'package:school/screens/LecturerScreen.dart';
 import 'package:school/screens/home.dart';
 import 'package:school/screens/TimeTable.dart';
 import 'package:school/screens/Settings.dart';
+import 'package:school/screens/secondSettings.dart';
 
 class HomePageScreen extends StatefulWidget {
   @override
@@ -25,8 +26,11 @@ class _HomePageScreenState extends State<HomePageScreen>
     HomeScreen(
       key: PageStorageKey("Home Screen"),
     ),
-    OtherScreen(
-      key: PageStorageKey("Settings Screen"),
+    // OtherScreen(
+    //   key: PageStorageKey("Settings Screen"),
+    // ),
+    SecondSettings(
+      key: PageStorageKey("Settings Screen 2"),
     ),
     NotesApp(
       key: PageStorageKey("Notes Screen"),

@@ -286,7 +286,7 @@ class _NotesPageState extends State<NotesPage> {
                           height: 56,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: Colors.orangeAccent,
+                            color: Colors.orange,
                           ),
                           child: Icon(
                             Icons.add,

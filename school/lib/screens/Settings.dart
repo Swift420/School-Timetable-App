@@ -9,6 +9,7 @@ import 'package:school/constants.dart';
 import 'package:school/pages/help_center_page.dart';
 import 'package:school/pages/notes.dart';
 import 'package:school/pages/prof_page.dart';
+import 'package:school/screens/secondSettings.dart';
 import 'package:school/views/NotesPage.dart';
 import 'package:desktop_window/desktop_window.dart';
 import 'package:flutter/services.dart';
@@ -55,6 +56,7 @@ class _OtherScreenState extends State<OtherScreen> {
   }
 
   Future<void>? _launched3;
+  Future<void>? _launched4;
   Future<void> _launchInBrowser3(String url) async {
     if (await canLaunch(url)) {
       await launch(
@@ -75,6 +77,8 @@ class _OtherScreenState extends State<OtherScreen> {
         'https://ienabler.nust.na/pls/prodi41/w99pkg.mi_login';
     const String toLaunch3 =
         'https://www.nust.na/sites/default/files/documents/NUST%20CAMPUS%20MAP_Nov2017.pdf';
+    const String toLaunch4 =
+        'https://www.nust.na/sites/default/files/documents/2021-ACADEMIC-CALENDAR-SERIES-TWO-24-MAY-SPECIAL-SENEX.pdf';
     return SafeArea(
       child: ListView(
         children: [
@@ -162,18 +166,19 @@ class _OtherScreenState extends State<OtherScreen> {
                             horizontal: 20, vertical: 10),
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.to(NotesApp());
+                            Get.to(TestSchedule());
+                            //Get.to(SecondSettings());
                           },
                           child: Row(children: [
                             Icon(
-                              Icons.settings_outlined,
+                              Icons.schedule_outlined,
                               color: Colors.orangeAccent,
                             ),
                             SizedBox(
                               width: 20,
                             ),
                             Expanded(
-                              child: Text("Settings",
+                              child: Text("Schedule a Test",
                                   style: GoogleFonts.roboto(
                                     color: Colors.white,
                                     letterSpacing: 0.5,
@@ -231,18 +236,20 @@ class _OtherScreenState extends State<OtherScreen> {
                             horizontal: 20, vertical: 10),
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.to(() => HelpCenter());
+                            setState(() {
+                              _launched4 = _launchInBrowser3(toLaunch4);
+                            });
                           },
                           child: Row(children: [
                             Icon(
-                              Icons.help_outline,
+                              Icons.school_outlined,
                               color: Colors.orangeAccent,
                             ),
                             SizedBox(
                               width: 20,
                             ),
                             Expanded(
-                              child: Text("Help Center",
+                              child: Text("Academic Calendar",
                                   style: GoogleFonts.roboto(
                                     color: Colors.white,
                                     letterSpacing: 0.5,

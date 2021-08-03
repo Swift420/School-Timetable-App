@@ -20,6 +20,13 @@ class _HomeScreenState extends State<HomeScreen>
   final DateController dateController = Get.find();
   final OtherDateController otherDateController = Get.find();
 
+  @override
+  void initState() {
+    // TODO: implement initState
+
+    super.initState();
+  }
+
   var date = DateTime.now();
   var box = Hive.box("studentBox1");
 
