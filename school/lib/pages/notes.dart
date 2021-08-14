@@ -60,10 +60,13 @@ class _TestScheduleState extends State<TestSchedule> {
   List<Color> colors = [
     Colors.red[300]!,
     Colors.green[300]!,
+    Colors.green,
     Colors.blue[300]!,
     Colors.pink[300]!,
-    Colors.purple[300]!
+    Colors.purple[300]!,
+    Colors.yellow[300]!,
   ];
+
   Random random = Random();
   @override
   Widget build(BuildContext context) {
@@ -71,13 +74,19 @@ class _TestScheduleState extends State<TestSchedule> {
       backgroundColor: Color(0xFF121212),
       appBar: AppBar(
         backgroundColor: Color(0xFF121212),
-        leading: IconButton(
-            onPressed: () {
-              Get.to(HomePageScreen());
-            },
-            icon: Icon(Icons.arrow_back_ios)),
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Align(
+              alignment: Alignment.center,
+              child: Icon(
+                Icons.arrow_back_ios_new,
+                color: Colors.white,
+              )),
+        ),
         elevation: 0,
-        title: Text("Schedule Your Tests"),
+        title: Text("Schedule A Test"),
         centerTitle: true,
       ),
       floatingActionButton: FloatingActionButton(
@@ -181,7 +190,7 @@ class _TestScheduleState extends State<TestSchedule> {
                                             Text(
                                               grocery.date
                                                   .toString()
-                                                  .substring(10, 19),
+                                                  .substring(10, 16),
                                               style: GoogleFonts.montserrat(
                                                 fontSize: 13,
                                                 color: Colors.white70,
@@ -198,7 +207,7 @@ class _TestScheduleState extends State<TestSchedule> {
                                 ),
                                 Padding(
                                   padding:
-                                      const EdgeInsets.only(top: 90, left: 210),
+                                      const EdgeInsets.only(top: 90, left: 25),
                                   child: Row(
                                     children: [
                                       Column(
@@ -258,7 +267,9 @@ class _pageState extends State<page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //backgroundColor: Color(0xFF121212),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.orange,
         onPressed: () async {
           setState(() {
             safe = Hive.box("studentBox1").get(20);
@@ -308,7 +319,7 @@ class _pageState extends State<page> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 50,
               ),
               Padding(
                 padding: const EdgeInsets.all(24.0),
@@ -317,7 +328,10 @@ class _pageState extends State<page> {
                   child: TextFormField(
                     controller: textController,
                     decoration: InputDecoration(
+                      fillColor: Colors.white38, //Color(0xFF3d3d3d),
+                      filled: true,
                       hintText: "Title",
+                      hintStyle: TextStyle(color: Colors.black38),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.red),
                         borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -331,34 +345,7 @@ class _pageState extends State<page> {
                 ),
               ),
               SizedBox(
-                height: 8,
-              ),
-              Padding(
-                  padding:
-                      const EdgeInsets.only(left: 24.0, right: 24, bottom: 24),
-                  child: Container(
-                    margin: EdgeInsets.all(12),
-                    height: maxLines * 24.0,
-                    child: TextField(
-                      controller: bodyController,
-                      maxLines: maxLines,
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.red),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.red),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                        hintText: "",
-                        //fillColor: Colors.red[300],
-                        //filled: true,
-                      ),
-                    ),
-                  )),
-              SizedBox(
-                height: 20,
+                height: 100,
               ),
               SizedBox(
                 height: 300,
@@ -385,7 +372,7 @@ class _pageState extends State<page> {
     FlutterLocalNotificationsPlugin().zonedSchedule(
         id,
         title,
-        "${title} Class Has Started",
+        "Notification for ${title}",
         tz.TZDateTime.from(scheduleTime, tz.local),
         NotificationDetails(
           android: AndroidNotificationDetails(

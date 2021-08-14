@@ -33,12 +33,14 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
       child: Text(
         text,
         style: TextStyle(
-          color: (SpecSelected == index) ? Colors.green : Colors.blueGrey,
-        ),
+            color: (SpecSelected == index)
+                ? Colors.green
+                : Colors.white //Colors.blueGrey,
+            ),
       ),
       style: ElevatedButton.styleFrom(
-        onPrimary: Colors.white,
-        primary: Colors.white,
+        onPrimary: Color(0xFF212121),
+        primary: Color(0xFF212121),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         side: BorderSide(
           color: (SpecSelected == index) ? Colors.green : Colors.blueGrey,
@@ -81,12 +83,12 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
       child: Text(
         text,
         style: TextStyle(
-          color: (courseSelected == index) ? Colors.green : Colors.blueGrey,
+          color: (courseSelected == index) ? Colors.green : Colors.white,
         ),
       ),
       style: ElevatedButton.styleFrom(
         onPrimary: Colors.white,
-        primary: Colors.white,
+        primary: Color(0xFF212121),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         side: BorderSide(
           color: (courseSelected == index) ? Colors.green : Colors.blueGrey,
@@ -105,12 +107,12 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
       child: Text(
         text,
         style: TextStyle(
-          color: (yearSelected == index) ? Colors.green : Colors.blueGrey,
+          color: (yearSelected == index) ? Colors.green : Colors.white,
         ),
       ),
       style: ElevatedButton.styleFrom(
         onPrimary: Colors.white,
-        primary: Colors.white,
+        primary: Color(0xFF212121),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         side: BorderSide(
           color: (yearSelected == index) ? Colors.green : Colors.blueGrey,
@@ -129,12 +131,14 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
       child: Text(
         text,
         style: TextStyle(
-          color: (groupSelected == index) ? Colors.green : Colors.blueGrey,
-        ),
+            color: (groupSelected == index)
+                ? Colors.green
+                : Colors.white //Colors.blueGrey,
+            ),
       ),
       style: ElevatedButton.styleFrom(
         onPrimary: Colors.white,
-        primary: Colors.white,
+        primary: Color(0xFF212121),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         side: BorderSide(
           color: (groupSelected == index) ? Colors.green : Colors.blueGrey,
@@ -232,7 +236,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Color(0xFF121212),
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20),
             topRight: Radius.circular(20),
@@ -250,6 +254,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                     "Group",
                     style: TextStyle(
                       fontSize: 17,
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -310,6 +315,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                     "Year",
                     style: TextStyle(
                       fontSize: 17,
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -339,6 +345,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                     "Course",
                     style: TextStyle(
                       fontSize: 17,
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -366,6 +373,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                     "Specialization",
                     style: TextStyle(
                       fontSize: 17,
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -390,36 +398,6 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                   ),
                 ),
                 SizedBox(height: 30),
-                Center(
-                  child: Text(
-                    "Notifications",
-                    style: TextStyle(
-                      fontSize: 17,
-                    ),
-                  ),
-                ),
-                Center(
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Padding(
-                      padding:
-                          const EdgeInsets.only(left: 10, right: 20, top: 10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          customNotif("On", 1),
-                          SizedBox(width: 20),
-                          customNotif("Off", 2),
-                          SizedBox(width: 20),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -434,13 +412,13 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                       Expanded(
                         child: Text("Change Name or Student Number",
                             style: GoogleFonts.roboto(
-                              color: Colors.black,
+                              color: Colors.white,
                               letterSpacing: 0.5,
                             )),
                       ),
                     ]),
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFFF5F6F9),
+                      primary: Color(0xFF212121),
                       padding: EdgeInsets.all(20),
                       elevation: 0.3,
                       shape: RoundedRectangleBorder(

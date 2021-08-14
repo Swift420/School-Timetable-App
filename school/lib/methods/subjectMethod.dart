@@ -14,13 +14,16 @@ class Subjects1 extends StatefulWidget {
   String lecturer;
   String time;
   int id;
+  int col;
 
-  Subjects1(
-      {required this.module,
-      required this.lecturer,
-      required this.loc,
-      required this.time,
-      required this.id});
+  Subjects1({
+    required this.module,
+    required this.lecturer,
+    required this.loc,
+    required this.time,
+    required this.id,
+    required this.col,
+  });
 
   @override
   _Subjects1State createState() => _Subjects1State();
@@ -38,6 +41,17 @@ class _Subjects1State extends State<Subjects1> {
     super.initState();
     tz.initializeTimeZones();
   }
+
+  List<Color> colors = [
+    Colors.blue,
+    Colors.green,
+    Colors.green[300]!,
+    Colors.orange,
+    Colors.grey,
+    Colors.yellow,
+    Colors.purple,
+    Colors.red,
+  ];
 
   Future _showNotification() async {
     var androidDetails = new AndroidNotificationDetails(
@@ -70,12 +84,13 @@ class _Subjects1State extends State<Subjects1> {
       ),
       child: Row(
         children: [
+          SizedBox(width: 15),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                width: 15,
+                width: 10,
               ),
               Center(
                 child: Text(
@@ -89,7 +104,7 @@ class _Subjects1State extends State<Subjects1> {
             ],
           ),
           SizedBox(
-            width: 50,
+            width: 30,
           ),
           Container(
             height: 100,
@@ -104,11 +119,21 @@ class _Subjects1State extends State<Subjects1> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "${widget.module}",
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
+                Row(
+                  children: [
+                    SizedBox(width: 4),
+                    CircleAvatar(
+                      radius: 7,
+                      backgroundColor: colors[widget.col],
+                    ),
+                    SizedBox(width: 5),
+                    Text(
+                      "${widget.module}",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
                 ),
                 Row(
                   children: [
@@ -136,6 +161,7 @@ class _Subjects1State extends State<Subjects1> {
                       Icons.person,
                       color: Colors.white70,
                       //color: Colors.grey,
+                      size: 21,
                     ),
                     SizedBox(
                       width: 1,
@@ -154,9 +180,7 @@ class _Subjects1State extends State<Subjects1> {
           ),
           IconButton(
             icon: Icon(
-              selected
-                  ? Icons.notifications_none
-                  : Icons.notifications_active_outlined,
+              selected ? Icons.notifications_none : Icons.notifications_none,
               color: Colors.white,
             ),
             onPressed: () async {

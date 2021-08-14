@@ -68,6 +68,8 @@ Column CompScienceClassY2() {
         FbCollectionY2(1, "Thurs", "Y2", "Com"),
       ] else if (dateController.class2.value == 5) ...[
         FbCollectionY2(1, "Fri", "Y2", "Com"),
+      ] else if (dateController.class2.value == 7) ...[
+        FbCollectionY2(1, "Fri", "Y2", "Com"),
       ]
     ]
   ]);
@@ -99,7 +101,8 @@ StreamBuilder<QuerySnapshot<Map<String, dynamic>>> FbCollectionY2(
                 lecturer: grocery["lecturer"],
                 loc: grocery["loc"],
                 time: grocery["time"],
-                id: grocery["id"]),
+                id: grocery["id"],
+                col: grocery["color"]),
             SizedBox(height: 15),
           ],
         );
@@ -133,7 +136,8 @@ StreamBuilder<QuerySnapshot<Map<String, dynamic>>> FbCollection(
                 lecturer: grocery["lecturer"],
                 loc: grocery["loc"],
                 time: grocery["time"],
-                id: grocery["id"]),
+                id: grocery["id"],
+                col: grocery["color"]),
             SizedBox(height: 15),
           ],
         );

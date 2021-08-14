@@ -114,17 +114,6 @@ class _SecondSettingsState extends State<SecondSettings> {
                           ),
                         ),
                       ),
-                      // SizedBox(
-                      //   height: 10,
-                      // ),
-                      // Text(
-                      //   "Enter a beautiful World",
-                      //   style: TextStyle(
-                      //     color: Colors.white,
-                      //     fontSize: 22,
-                      //     fontWeight: FontWeight.w300,
-                      //   ),
-                      // ),
                     ],
                   ),
                 ),
@@ -163,7 +152,7 @@ class _SecondSettingsState extends State<SecondSettings> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Radio Buttons
-              SizedBox(height: 0),
+              SizedBox(height: 20),
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 0, vertical: 10),

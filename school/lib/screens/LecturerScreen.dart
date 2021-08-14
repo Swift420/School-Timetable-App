@@ -31,7 +31,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   Padding(
                     padding: const EdgeInsets.only(left: 115.0),
                     child: Text(
-                      "FCI Society",
+                      "Staff Members",
                       style: GoogleFonts.roboto(
                         fontSize: 20,
                         color: Colors.white,

@@ -17,23 +17,27 @@ class HomePageScreen extends StatefulWidget {
 class _HomePageScreenState extends State<HomePageScreen>
     with AutomaticKeepAliveClientMixin {
   final tabs = [
+    NotesApp(
+      key: PageStorageKey("Notes Screen"),
+    ),
+
     SettingsScreen(
       key: PageStorageKey("Lecturer Screen"),
     ),
-    LecturerScreen(
-      key: PageStorageKey("TimeTable Screen"),
-    ),
+
     HomeScreen(
       key: PageStorageKey("Home Screen"),
     ),
     // OtherScreen(
     //   key: PageStorageKey("Settings Screen"),
+
     // ),
+
+    LecturerScreen(
+      key: PageStorageKey("TimeTable Screen"),
+    ),
     SecondSettings(
       key: PageStorageKey("Settings Screen 2"),
-    ),
-    NotesApp(
-      key: PageStorageKey("Notes Screen"),
     ),
   ];
   final PageStorageBucket bucket = PageStorageBucket();
@@ -51,18 +55,20 @@ class _HomePageScreenState extends State<HomePageScreen>
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color(0xFF212121),
         currentIndex: _currentIndex,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
 
         selectedItemColor: Colors.orangeAccent,
         unselectedItemColor: Colors.white,
         //backgroundColor: Colors.transparent,
         type: BottomNavigationBarType.fixed,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.groups), label: "Lecturers"),
+          BottomNavigationBarItem(icon: Icon(Icons.notes), label: "Notes"),
+          BottomNavigationBarItem(icon: Icon(Icons.people), label: "Staff"),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
               icon: Icon(Icons.calendar_today), label: "TimeTable"),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
-          BottomNavigationBarItem(icon: Icon(Icons.notes), label: "Notes"),
         ],
         onTap: (index) {
           setState(() {
