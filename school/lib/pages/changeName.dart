@@ -126,6 +126,7 @@ class _ChangeNameStudentState extends State<ChangeNameStudent> {
                       return null;
                     }
                   },
+                  style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
@@ -156,6 +157,7 @@ class _ChangeNameStudentState extends State<ChangeNameStudent> {
                         return null;
                       }
                     },
+                    style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),

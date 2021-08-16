@@ -45,18 +45,32 @@ Column CompScienceClassY1() {
 
 Column CompScienceClassY2() {
   return Column(children: [
-    if (box.get(6) == 3) ...[
-      if (dateController.class2.value == 1) ...[
-        FbCollectionY2(1, "Mon", "Y2", "Com"),
-      ] else if (dateController.class2.value == 2) ...[
-        FbCollectionY2(1, "Tues", "Y2", "Com"),
-      ] else if (dateController.class2.value == 3) ...[
-        FbCollectionY2(1, "Wed", "Y2", "Com"),
-      ] else if (dateController.class2.value == 4) ...[
-        FbCollectionY2(1, "Thurs", "Y2", "Com"),
-      ] else if (dateController.class2.value == 5) ...[
-        FbCollectionY2(1, "Fri", "Y2", "Com"),
-      ]
+    if (box.get(6) == 1) ...[
+      if (box.get(3) == 1) ...[
+        if (dateController.class2.value == 1) ...[
+          FbCollectionY2(1, "Mon", "Y2", "software"),
+        ] else if (dateController.class2.value == 2) ...[
+          FbCollectionY2(1, "Tue", "Y2", "software"),
+        ] else if (dateController.class2.value == 3) ...[
+          FbCollectionY2(1, "Wed", "Y2", "software"),
+        ] else if (dateController.class2.value == 4) ...[
+          FbCollectionY2(1, "Thurs", "Y2", "software"),
+        ] else if (dateController.class2.value == 5) ...[
+          FbCollectionY2(1, "Fri", "Y2", "software"),
+        ]
+      ] else if (box.get(3) == 2) ...[
+        if (dateController.class2.value == 1) ...[
+          FbCollectionY2(1, "Mon", "Y2", "software"),
+        ] else if (dateController.class2.value == 2) ...[
+          FbCollectionY2(1, "Tue", "Y2", "software"),
+        ] else if (dateController.class2.value == 3) ...[
+          FbCollectionY2(1, "Wed", "Y2", "software"),
+        ] else if (dateController.class2.value == 4) ...[
+          FbCollectionY2(1, "Thurs", "Y2", "software"),
+        ] else if (dateController.class2.value == 5) ...[
+          FbCollectionY2(1, "Fri", "Y2", "software"),
+        ]
+      ],
     ] else if (box.get(6) == 2) ...[
       if (dateController.class2.value == 1) ...[
         FbCollectionY2(1, "Mon", "Y2", "Sys"),
@@ -97,12 +111,14 @@ StreamBuilder<QuerySnapshot<Map<String, dynamic>>> FbCollectionY2(
         return Column(
           children: [
             Subjects1(
-                module: grocery["module"],
-                lecturer: grocery["lecturer"],
-                loc: grocery["loc"],
-                time: grocery["time"],
-                id: grocery["id"],
-                col: grocery["color"]),
+              module: grocery["module"],
+              lecturer: grocery["lecturer"],
+              loc: grocery["loc"],
+              time: grocery["time"],
+              id: grocery["id"],
+              col: grocery["color"],
+              timeBefore: grocery["td"],
+            ),
             SizedBox(height: 15),
           ],
         );
@@ -132,12 +148,14 @@ StreamBuilder<QuerySnapshot<Map<String, dynamic>>> FbCollection(
         return Column(
           children: [
             Subjects1(
-                module: grocery["module"],
-                lecturer: grocery["lecturer"],
-                loc: grocery["loc"],
-                time: grocery["time"],
-                id: grocery["id"],
-                col: grocery["color"]),
+              module: grocery["module"],
+              lecturer: grocery["lecturer"],
+              loc: grocery["loc"],
+              time: grocery["time"],
+              id: grocery["id"],
+              col: grocery["color"],
+              timeBefore: grocery["td"],
+            ),
             SizedBox(height: 15),
           ],
         );

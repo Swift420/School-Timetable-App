@@ -389,9 +389,9 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                         children: [
                           customSpecRadio("Software Development", 1),
                           SizedBox(width: 20),
-                          customSpecRadio("Network Administration", 2),
+                          customSpecRadio("Systems Administration", 2),
                           SizedBox(width: 20),
-                          customSpecRadio("Communications Network", 3),
+                          customSpecRadio("Communication Networks", 3),
                         ],
                       ),
                     ),

@@ -16,9 +16,9 @@ class detailsPage extends StatefulWidget {
 class _detailsPageState extends State<detailsPage> {
   var box = Hive.box("studentBox1");
   int courseSelected = 1;
-  int yearSelected = 2;
+  int yearSelected = 1;
   int groupSelected = 1;
-  int SpecSelected = 0;
+  int SpecSelected = 1;
   int notifSelected = 1;
 
   Widget customSpecRadio(String text, int index) {
@@ -31,12 +31,12 @@ class _detailsPageState extends State<detailsPage> {
       child: Text(
         text,
         style: TextStyle(
-          color: (SpecSelected == index) ? Colors.green : Colors.blueGrey,
+          color: (SpecSelected == index) ? Colors.green : Colors.white,
         ),
       ),
       style: ElevatedButton.styleFrom(
         onPrimary: Colors.white,
-        primary: Colors.white,
+        primary: Color(0xFF212121),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         side: BorderSide(
           color: (SpecSelected == index) ? Colors.green : Colors.blueGrey,
@@ -55,12 +55,12 @@ class _detailsPageState extends State<detailsPage> {
       child: Text(
         text,
         style: TextStyle(
-          color: (courseSelected == index) ? Colors.green : Colors.blueGrey,
+          color: (courseSelected == index) ? Colors.green : Colors.white,
         ),
       ),
       style: ElevatedButton.styleFrom(
         onPrimary: Colors.white,
-        primary: Colors.white,
+        primary: Color(0xFF212121),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         side: BorderSide(
           color: (courseSelected == index) ? Colors.green : Colors.blueGrey,
@@ -79,12 +79,12 @@ class _detailsPageState extends State<detailsPage> {
       child: Text(
         text,
         style: TextStyle(
-          color: (yearSelected == index) ? Colors.green : Colors.blueGrey,
+          color: (yearSelected == index) ? Colors.green : Colors.white,
         ),
       ),
       style: ElevatedButton.styleFrom(
         onPrimary: Colors.white,
-        primary: Colors.white,
+        primary: Color(0xFF212121),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         side: BorderSide(
           color: (yearSelected == index) ? Colors.green : Colors.blueGrey,
@@ -103,12 +103,12 @@ class _detailsPageState extends State<detailsPage> {
       child: Text(
         text,
         style: TextStyle(
-          color: (groupSelected == index) ? Colors.green : Colors.blueGrey,
+          color: (groupSelected == index) ? Colors.green : Colors.white,
         ),
       ),
       style: ElevatedButton.styleFrom(
         onPrimary: Colors.white,
-        primary: Colors.white,
+        primary: Color(0xFF212121),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         side: BorderSide(
           color: (groupSelected == index) ? Colors.green : Colors.blueGrey,
@@ -121,7 +121,9 @@ class _detailsPageState extends State<detailsPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xFF212121),
         body: IntroductionScreen(
+          globalBackgroundColor: Color(0xFF212121),
           pages: [
             PageViewModel(
                 titleWidget: _title("Which Course are you doing"),
@@ -183,6 +185,20 @@ class _detailsPageState extends State<detailsPage> {
                         ],
                       ),
                     ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          customGroupRadio("Group 7", 7),
+                          customGroupRadio("Group 8", 8),
+                          customGroupRadio("Group 9", 9),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
                 image: buildImage("assets/images/Digitalnomad-amico.png")),
@@ -224,7 +240,7 @@ class _detailsPageState extends State<detailsPage> {
           showNextButton: true,
           showSkipButton: true,
           skip: Text("Skip"),
-          skipColor: Colors.black45,
+          skipColor: Colors.orange,
           dotsDecorator: DotsDecorator(
             activeColor: Colors.orangeAccent,
           ),
@@ -241,6 +257,7 @@ class _detailsPageState extends State<detailsPage> {
           children: [
             Text(titleName,
                 style: GoogleFonts.poppins(
+                  color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
                 )),

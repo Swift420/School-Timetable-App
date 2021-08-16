@@ -15,6 +15,7 @@ class Subjects1 extends StatefulWidget {
   String time;
   int id;
   int col;
+  String timeBefore;
 
   Subjects1({
     required this.module,
@@ -23,6 +24,7 @@ class Subjects1 extends StatefulWidget {
     required this.time,
     required this.id,
     required this.col,
+    required this.timeBefore,
   });
 
   @override
@@ -43,13 +45,14 @@ class _Subjects1State extends State<Subjects1> {
   }
 
   List<Color> colors = [
-    Colors.blue,
+    Colors.blue[300]!,
     Colors.green,
     Colors.green[300]!,
     Colors.orange,
     Colors.grey,
     Colors.yellow,
-    Colors.purple,
+    //Colors.purple,
+    Colors.pink[600]!,
     Colors.red,
   ];
 
@@ -70,7 +73,7 @@ class _Subjects1State extends State<Subjects1> {
   @override
   Widget build(BuildContext context) {
     var why = DateTime.parse(
-        "${DateTime.now().toString().substring(0, 10)} ${widget.time}");
+        "${DateTime.now().toString().substring(0, 10)} ${widget.timeBefore}");
 
     return Container(
       padding: EdgeInsets.all(10),
@@ -201,7 +204,7 @@ class _Subjects1State extends State<Subjects1> {
                 displayNotification("${widget.module}", why, widget.id);
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content: Padding(
-                    padding: const EdgeInsets.only(left: 70.0),
+                    padding: const EdgeInsets.only(left: 40.0),
                     child: Text(
                       "Notification set for ${widget.module}",
                       style: TextStyle(color: Colors.black),
@@ -248,7 +251,7 @@ class _Subjects1State extends State<Subjects1> {
     FlutterLocalNotificationsPlugin().zonedSchedule(
         id,
         lesson,
-        "${lesson} Class Has Started",
+        "Your class starts in 5 minutes",
         tz.TZDateTime.from(lessonTime, tz.local),
         NotificationDetails(
           android: AndroidNotificationDetails(
