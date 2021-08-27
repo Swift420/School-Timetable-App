@@ -24,8 +24,8 @@ Column UltimateColumn() {
         CompScienceClassY1(),
       ] else if (box.get(4) == 2 && box.get(5) == 1) ...[
         CompScienceClassY2(),
-      ] else if (box.get(4) == 3 && box.get(5) == 1) ...[
-        CompScienceClassY1(),
+      ] else if (box.get(4) == 2 && box.get(5) == 2) ...[
+        InformaticsY2(),
       ]
     ],
   );

@@ -20,7 +20,7 @@
         </intent>
     </queries>
    <application
-        android:label="school"
+        android:label="Cletus"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

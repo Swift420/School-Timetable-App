@@ -361,7 +361,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                         children: [
                           customCourseRadio("Comp. Science", 1),
                           SizedBox(width: 20),
-                          customCourseRadio("CS. Cyber Security", 2),
+                          customCourseRadio("Informatics", 2),
                         ],
                       ),
                     ),

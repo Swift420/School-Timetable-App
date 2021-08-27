@@ -18,7 +18,7 @@ class _detailsPageState extends State<detailsPage> {
   int courseSelected = 1;
   int yearSelected = 1;
   int groupSelected = 1;
-  int SpecSelected = 1;
+  int SpecSelected = 0;
   int notifSelected = 1;
 
   Widget customSpecRadio(String text, int index) {
@@ -136,7 +136,7 @@ class _detailsPageState extends State<detailsPage> {
                         SizedBox(
                           width: 10,
                         ),
-                        customCourseRadio("CS. Cyber Security", 2),
+                        customCourseRadio("Informatics", 2),
                       ],
                     ),
                   ],

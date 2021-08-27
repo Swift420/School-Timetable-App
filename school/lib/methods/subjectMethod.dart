@@ -51,9 +51,10 @@ class _Subjects1State extends State<Subjects1> {
     Colors.orange,
     Colors.grey,
     Colors.yellow,
-    //Colors.purple,
-    Colors.pink[600]!,
+    Colors.pink[400]!,
     Colors.red,
+    Colors.purple,
+    Colors.black
   ];
 
   Future _showNotification() async {

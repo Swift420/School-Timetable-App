@@ -76,6 +76,17 @@ class _LecturerScreenState extends State<LecturerScreen> {
                   ],
                 ),
               ]
+            ] else if (box.get(5) == 2) ...[
+              Column(
+                children: [
+                  SizedBox(
+                    height: 40,
+                  ),
+                  if (box.get(4) == 2) ...[
+                    TimeTableMethod("timetablesY2", 2, 12),
+                  ]
+                ],
+              )
             ]
           ],
         ),

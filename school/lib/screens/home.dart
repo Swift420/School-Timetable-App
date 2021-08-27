@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen>
                 Container(
                   alignment: Alignment.centerRight,
                   child: Text(
-                    "Computer Science: Cyber Security",
+                    "Informatics",
                     style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w700,
